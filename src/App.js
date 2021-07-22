@@ -55,7 +55,7 @@ class App extends Component {
 
   ProceedBooking=()=>{
     var num_of_days=Math.ceil((this.state.to-this.state.from)/8.64e7);
-    var price,minimum_rent_period,type,durability;
+    var price,minimum_rent_period,type,durability,meter;
     data.map((data,index)=>{
       if(data.name==this.state.selectedValue){
         price=data.price;
@@ -75,8 +75,11 @@ class App extends Component {
     }
     durability=(durability-2)*num_of_days;
 
-    //Price Calculation for rental including meter estimation
-    this.setState({totalPrice:(num_of_days*10*price*minimum_rent_period),show_price:true,book:false});
+    //meter estimation
+    meter=num_of_days*10;
+
+    //Price Calculation for rental
+    this.setState({totalPrice:(num_of_days*price*minimum_rent_period),show_price:true,book:false});
   }
 
   ConfirmBooking=()=>{
