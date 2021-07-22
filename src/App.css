@@ -41,6 +41,7 @@
   height:100%;
   width:100%;
   margin: 100px;
+  position: relative;
 }
 table{
   border: 1px solid;
@@ -57,10 +58,16 @@ tr,td{
   border:1px solid;
   text-align: center;
   margin: 100px;
+  position:absolute;
+  background-color: white;
+  padding:20px;
 }
 .search{
   margin:30px;
 }
 button{
   margin:30px;
+}
+.button-div{
+  text-align: center;
 }
